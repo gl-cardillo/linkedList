@@ -117,6 +117,7 @@ class LinkedList {
   }
 
   insertAt(value, index) {
+    if (isNaN(index)) return "Please insert a correct numeric value";
     if (index < 2) return "Please use append or prepend";
     let newNode = new Node(value);
     let pointer = this.head;
@@ -137,6 +138,8 @@ class LinkedList {
   }
 
   removeAt(index) {
+
+    if (isNaN(index)) return "Please insert a correct numeric value";
     let pointer = this.head;
     if (index == 0) {
       this.head = this.head.nextNode;

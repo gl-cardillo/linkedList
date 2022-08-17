@@ -68,6 +68,9 @@ describe("methods of the linkedList", () => {
   });
 
   it("it should add a new node in the list at the requested index", () => {
+    expect(linkedList.removeAt("abc")).toBe(
+      "Please insert a correct numeric value"
+    );
     linkedList.insertAt("inserted node", 3);
     expect(linkedList.toString()).toBe(
       "(new head) -> (second node added to the head) -> (first node added to the head) -> (inserted node) -> (node) -> (first node added to the tail) -> (second node added to the tail) -> (new tail) -> (add tail to stay)"
@@ -82,15 +85,18 @@ describe("methods of the linkedList", () => {
     expect(linkedList.toString()).toBe(
       "(new head) -> (second node added to the head) -> (first node added to the head) -> (inserted node) -> (node) -> (second inserted node) -> (first node added to the tail) -> (second node added to the tail) -> (new tail) -> (add tail to stay)"
     );
-          expect(linkedList.insertAt("add head", 0)).toBe(
-            "Please use append or prepend"
-          );
-          expect(linkedList.toString()).toBe(
-            "(new head) -> (second node added to the head) -> (first node added to the head) -> (inserted node) -> (node) -> (second inserted node) -> (first node added to the tail) -> (second node added to the tail) -> (new tail) -> (add tail to stay)"
-          );
+    expect(linkedList.insertAt("add head", 0)).toBe(
+      "Please use append or prepend"
+    );
+    expect(linkedList.toString()).toBe(
+      "(new head) -> (second node added to the head) -> (first node added to the head) -> (inserted node) -> (node) -> (second inserted node) -> (first node added to the tail) -> (second node added to the tail) -> (new tail) -> (add tail to stay)"
+    );
   });
 
   it("it should remove a node in the list at the requested index", () => {
+    expect(linkedList.removeAt("abc")).toBe(
+      "Please insert a correct numeric value"
+    );
     linkedList.removeAt(3);
     expect(linkedList.toString()).toBe(
       "(new head) -> (second node added to the head) -> (first node added to the head) -> (node) -> (second inserted node) -> (first node added to the tail) -> (second node added to the tail) -> (new tail) -> (add tail to stay)"
